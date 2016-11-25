@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="wrap category-main">
+{% for category in site.categories %}
+	<div class= {{ category | first}}>
+		<h2 class="archive">{{ category | first }}</h2>
+		<ul class="archive-list">
+		    {% for post in category.last %}
+		    <li>
+		    	<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+		    	<a class="post-mate" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>	
+		    </li>
+		    {% endfor %}
+		</ul>
+	</div>
+{% endfor %}
+</div>
+<!-- <div class="wrap category-main">
+	<h2 class="archive">JavaScript</h2>
+	<ul class="archive-list">
+		<li>
+			<span class="post-time">Sep 5, 2016</span>
+			<a href="/post.html" class="post-mate">JavaScript 设计模式笔记（四）—— 迭代器模式</a>
+		</li>
+	</ul>
+</div> -->

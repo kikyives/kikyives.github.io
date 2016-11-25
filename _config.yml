@@ -1,0 +1,14 @@
+name: Kiky
+markdown: kramdown
+port: 3031
+permalink: /blog/:year/:month/:day/:title
+title: Kiky
+encoding: utf-8
+description: Kiky的个人博客
+baseurl: ""
+# categories: [CSS,JavaScript,MVVM,BuildTools,BookTour]
+# pygments: true
+paginate: 5
+paginate_path: "/page:num"
+gems: [jekyll-paginate]
+safe: false

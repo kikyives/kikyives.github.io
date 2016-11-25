@@ -1,0 +1,15 @@
+<header class="site-header">
+	<div class="wrap clearfix">
+		<a id="logo  clearfix" class="logo" href="/index.html">{{site.title}} <img src="/assets/images/logo.jpg" alt="Kiky"></a>
+		<nav class="site-nav"> 
+			<div class="iconfont icon-zhedieanniu"></div>
+    		<div class="site-nav-tag clearfix">
+    			{% for category in site.categorys %}
+    			<a class="page-link" id="{{category | first}}" href="{{'/category#.html'}}{{ category | first }}">
+    				{{ category | first }}
+				</a>
+				{% endfor %}   		
+    		</div>	
+		</nav>
+	</div>
+</header>
