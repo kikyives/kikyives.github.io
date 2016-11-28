@@ -31,6 +31,9 @@ $(document).ready(function(){
 					if($(window).width() <= 600 && navTag.css('display') == 'block'){
 						navTag.css('display','none')
 					}
+					if($(window).width() > 600 && navTag.css('display') == 'none'){
+						navTag.css('display','block')
+					}
 				});
 		}
 
