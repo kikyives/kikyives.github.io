@@ -19,7 +19,7 @@ date: 2016-11-07
 
 #### 1.删除默认的RubyGem镜像
 
-##### # gem sources --remove https://rubygems.org/
+#### # gem sources --remove https://rubygems.org/
 
 
 第一步是没有问题的
@@ -33,7 +33,7 @@ date: 2016-11-07
 >
 
 
->##### # gem sources -a http://gems.ruby-china.org/
+>#### # gem sources -a http://gems.ruby-china.org/
 >![alt gem-ruby-china](/assets/images/gemError/gem-ruby-china.png "gem-ruby-china")
 
 
