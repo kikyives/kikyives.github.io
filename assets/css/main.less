@@ -1,6 +1,6 @@
 @theme1-name-color: #ff913c;
 @theme1-nav-color: #2c3e50;
-@theme1-borbtm-Color: rgba(255, 143, 57, 0.2);
+@theme1-borbtm-Color: rgba(255, 143, 57, 0.1);
 @theme1-date-color: #7f8c8d;
 a{
 	color:@theme1-nav-color;
@@ -27,7 +27,7 @@ body {
     .logo{
 		-webkit-transition: 0.2s all;
 	    transition: 0.2s all;
-	    font-size:18px;
+	    font-size:22px; 
 	    font-weight:bold;
 	    color:@theme1-name-color;
 	    line-height:100px;
@@ -37,6 +37,7 @@ body {
 	    	height:60px;
 	    	border-radius:60px;
 	    	margin-left:20px;
+	    	font-weight:300
 	    }
 	}
     .site-nav{
@@ -50,6 +51,7 @@ body {
 	    		float:left;	
 				margin:0 10px;
 				color:@theme1-nav-color;
+				font-size:18px;
 		    }
 		    .page-link:hover{
 				color:@theme1-name-color;
@@ -67,6 +69,8 @@ body {
     	cursor:pointer;
     	margin-right:20px;
     	display:none;
+    	position:relative;
+    	z-index:100;
     }
 }
 .site-header.reading{
@@ -261,14 +265,16 @@ body {
 		width:90px;
 		display:none;
 		position:absolute;
-		top:70px;
+		top:30px;
 		right:2px;
 		background:#fff;
 		border:1px solid #eee;
+		z-inde:99;
 		.page-link{
 			float:none;
 			display:block;
 			line-height:25px;
+			padding-top:40px;
 		}
 	}
 	.site-header .site-nav .iconfont{
