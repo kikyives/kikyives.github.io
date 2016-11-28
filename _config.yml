@@ -6,7 +6,7 @@ title: Kiky
 encoding: utf-8
 description: Kiky的个人博客
 baseurl: ""
-# categorys: [CSS,JavaScript,MVVM,BuildTools,BookTour]
+#categories: [CSS,JavaScript,MVVM,BuildTools,BookTour]
 # pygments: true
 paginate: 5
 paginate_path: "/page:num"

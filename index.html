@@ -23,7 +23,7 @@ title: kiky
         </li>
         {% endfor %}
     </ul>
- 
+
     {% if paginator.total_pages > 1 %}
     <div class="page clearfix">
         {% if paginator.previous_page %}
@@ -31,7 +31,7 @@ title: kiky
         {% endif %} 
 
         {% for page in (1..paginator.total_pages) %} 
-            {% if page == paginator.pageNumpage %}
+            {% if page == paginator.page %}
                 <span class="pageNum active">{{ page }}</span> 
             {% elsif page == 1 %}
                 <a class="pageNum" href="{{ '/index.html' | prepend: site.baseurl}}">{{ page }}</a> 
