@@ -205,6 +205,15 @@ body {
   height: 25px;
   display: inline-block;
 }
+.post-header .post-content .page a {
+  color: #835092;
+}
+.post-header .post-content .page a:hover {
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: #000;
+  color: #fff;
+}
 .post-header .post-content .page .next {
   right: -25px;
 }
