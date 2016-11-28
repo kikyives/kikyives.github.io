@@ -11,6 +11,7 @@ body {
     font-size: 15px;
     line-height: 1.7em;    
 }
+//头部
 .site-header{
 	-webkit-transition: 0.5s all;
     transition: 0.5s all;
@@ -69,6 +70,8 @@ body {
     	cursor:pointer;
     	margin-right:20px;
     	display:none;
+    }
+    .icon-zhedieanniu:before{
     	position:relative;
     	z-index:100;
     }
@@ -148,53 +151,91 @@ body {
 			    cursor:pointer;    
 			}
 			.post-link:hover{
-					color:@theme1-name-color;
-				}
-			
+				color:@theme1-name-color;
+			}
+		}
+	}
 
+	//页码
+	.page {
+	    display: block;
+	    margin: 0 auto;
+	    font-size: 16px;
+	    position: relative;
+	    text-align: center;
+	    span {
+		    cursor: default;
+		    color: @theme1-name-color;
 		}
-	}
-}
-.category-main{
-	margin:30px 10px 0 10px;
-	.archive{
-		padding:20px 0;
-	}
-	.archive-list{
-		margin:0 30px;
-		.post-time {
+		span,
+		a {
+		    float: left;
+		    line-height: 25px;
+		    width: 25px;
+		    height: 25px;
 		    display: inline-block;
-		    width: 100px;
-		    color: @theme1-date-color;
 		}
-		.post-mate{
-			color:@theme1-name-color;
+		a {
+		    color: #835092;
 		}
-		.post-mate:hover{
-			text-decoration: underline;
+		a:hover{
+	    	cursor: pointer;
+			border-radius: 100px;
+			background-color: #000;
+			color: #fff;
+		}
+		.next {
+		    right: -25px;
+		}
+		.next,
+		.prev {
+		    display: inline-block;
+		    position: absolute;
+		    top: 0;
 		}
 	}
-	
 }
+//分类列表页
+	.category-main{
+		margin:30px 10px 0 10px;
+		.archive{
+			padding:20px 0;
+		}
+		.archive-list{
+			margin:0 30px;
+			.post-time {
+			    display: inline-block;
+			    width: 100px;
+			    color: @theme1-date-color;
+			}
+			.post-mate{
+				color:@theme1-name-color;
+			}
+			.post-mate:hover{
+				text-decoration: underline;
+			}
+		}
+		
+	}
 
 
 //内容页
-.post-header{
-   margin-bottom: 30px;
-   .post-title {
-	    margin-top: 15px;
-	    font-size: 42px;
-	    line-height: 1.5;
-	    text-transform: capitalize;
-	}
-	.post-meta {
-	    font-size: 14px;
-	    color: @theme1-date-color;
+	.post-header{
+	   margin-bottom: 30px;
+	   .post-title {
+		    margin-top: 15px;
+		    font-size: 42px;
+		    line-height: 1.5;
+		    text-transform: capitalize;
+		}
+		.post-meta {
+		    font-size: 14px;
+		    color: @theme1-date-color;
+		}
 	}
 	.post-content{
 		margin-top:30px;
 		p{
-
 			color: @theme1-nav-color;
     		margin-bottom: 1em;
 		}
@@ -205,46 +246,17 @@ body {
 		    padding-left: 10px;
 		    border-left: 8px solid @theme1-name-color;
 		}
-		.page {
-		    display: block;
-		    margin: 0 auto;
-		    font-size: 16px;
-		    position: relative;
-		    text-align: center;
-		    span {
-			    cursor: default;
-			    color: @theme1-name-color;
-			}
-			span,
-			a {
-			    float: left;
-			    line-height: 25px;
-			    width: 25px;
-			    height: 25px;
-			    display: inline-block;
-			}
-			a {
-			    color: #835092;
-			}
-			a:hover{
-		    	cursor: pointer;
-				border-radius: 100px;
-    			background-color: #000;
-    			color: #fff;
-			}
-			.next {
-			    right: -25px;
-			}
-			.next,
-			.prev {
-			    display: inline-block;
-			    position: absolute;
-			    top: 0;
-			}
+		img{
+			max-width: calc(640px);
+		    margin-right: auto;
+		    margin-left: auto;
+		}
+		a{
+			color:@theme1-name-color;
 		}
 	}
 
-}
+
 
 //底部
 .site-footer{

@@ -66,6 +66,8 @@ body {
   cursor: pointer;
   margin-right: 20px;
   display: none;
+}
+.site-header .icon-zhedieanniu:before {
   position: relative;
   z-index: 100;
 }
@@ -143,6 +145,43 @@ body {
 .container .post-list li .post-link:hover {
   color: #ff913c;
 }
+.container .page {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+.container .page span {
+  cursor: default;
+  color: #ff913c;
+}
+.container .page span,
+.container .page a {
+  float: left;
+  line-height: 25px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+.container .page a {
+  color: #835092;
+}
+.container .page a:hover {
+  cursor: pointer;
+  border-radius: 100px;
+  background-color: #000;
+  color: #fff;
+}
+.container .page .next {
+  right: -25px;
+}
+.container .page .next,
+.container .page .prev {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
 .category-main {
   margin: 30px 10px 0 10px;
 }
@@ -176,56 +215,27 @@ body {
   font-size: 14px;
   color: #7f8c8d;
 }
-.post-header .post-content {
+.post-content {
   margin-top: 30px;
 }
-.post-header .post-content p {
+.post-content p {
   color: #2c3e50;
   margin-bottom: 1em;
 }
-.post-header .post-content h1,
-.post-header .post-content h2,
-.post-header .post-content h3 {
+.post-content h1,
+.post-content h2,
+.post-content h3 {
   margin-bottom: 1em;
   padding-left: 10px;
   border-left: 8px solid #ff913c;
 }
-.post-header .post-content .page {
-  display: block;
-  margin: 0 auto;
-  font-size: 16px;
-  position: relative;
-  text-align: center;
+.post-content img {
+  max-width: calc(640px);
+  margin-right: auto;
+  margin-left: auto;
 }
-.post-header .post-content .page span {
-  cursor: default;
+.post-content a {
   color: #ff913c;
-}
-.post-header .post-content .page span,
-.post-header .post-content .page a {
-  float: left;
-  line-height: 25px;
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-}
-.post-header .post-content .page a {
-  color: #835092;
-}
-.post-header .post-content .page a:hover {
-  cursor: pointer;
-  border-radius: 100px;
-  background-color: #000;
-  color: #fff;
-}
-.post-header .post-content .page .next {
-  right: -25px;
-}
-.post-header .post-content .page .next,
-.post-header .post-content .page .prev {
-  display: inline-block;
-  position: absolute;
-  top: 0;
 }
 .site-footer li {
   float: left;
