@@ -230,7 +230,7 @@ body {
   border-left: 8px solid #ff913c;
 }
 .post-content img {
-  max-width: calc(640px);
+  max-width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
