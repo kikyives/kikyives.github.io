@@ -55,6 +55,7 @@ date: 2017-03-16
 
 	new new Foo().getName(); //3
 
+
 解析：
 
 #### 第一问
@@ -72,6 +73,7 @@ date: 2017-03-16
 
 	function getName() { alert(5); };
 
+
 相当于就是
 
 	var getName;
@@ -79,6 +81,7 @@ date: 2017-03-16
 	function getName() { alert(5); }
 
 	getName = function () { alert(4); };
+
 
 这里考察另个概念，一是变量声明提升，二是函数表达式。
 
@@ -95,11 +98,15 @@ date: 2017-03-16
 	var x;
 	x = 0;
 
+
 代码执行时，js会先对代码进行预编译，js引擎会将声明语句提升至代码最上方，变为
 
 	var x;
 	console.log('x' in window) //true
 	x = 0;
+	
+	
+这里说明下这两个概念：
 
 ### 函数表达式
 ***
@@ -112,12 +119,14 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 	var x = 1;
 	function x(){}
 
+
 实际的顺序为
 
 	var x;
 	function x(){};
 	console.log(x)
 	x = 1;
+
 
 所以最终的函数声明x覆盖了变量声明的x。
 同理，源代码最终执行的是：
@@ -138,6 +147,7 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 	getName(); //最终输出4
 
 
+>
 #### 第三问
 ***
 Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。
