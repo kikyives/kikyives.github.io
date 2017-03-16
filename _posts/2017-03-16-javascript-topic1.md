@@ -68,17 +68,17 @@ date: 2017-03-16
 *****
 直接调用getName函数，所以跟1,2,3都没关系。那么来看，
 
-var getName = function () { alert(4); };
+	var getName = function () { alert(4); };
 
-function getName() { alert(5); };
+	function getName() { alert(5); };
 
 相当于就是
 
-var getName;
+	var getName;
 
-function getName() { alert(5); }
+	function getName() { alert(5); }
 
-getName = function () { alert(4); };
+	getName = function () { alert(4); };
 
 这里考察另个概念，一是变量声明提升，二是函数表达式。
 
@@ -90,6 +90,7 @@ getName = function () { alert(4); };
 也就是说所有声明变量或函数都会提升到当前函数顶部。
 
 例如下面代码：
+
 	console.log('x' in window) //true
 	var x;
 	x = 0;
@@ -106,11 +107,13 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 函数表达式会将代码段拆分两行代码分别执行。
 
 例如下面代码：
+
 	console.log(X);
 	var x = 1;
 	function x(){}
 
 实际的顺序为
+
 	var x;
 	function x(){};
 	console.log(x)
@@ -135,7 +138,7 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 	getName(); //最终输出4
 
 
-### 第三问
+#### 第三问
 ***
 Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。
 Foo函数第一句是getName = function(){ alert(1); };这是一个赋值语句，没有做var声明，所以先向当前函数作用域内寻找getName变量，没有找到就向当前函数作用域上层寻找，找到了，也就是第二问的alert(4)函数，然后给它赋值为function(){alert(1)}。
@@ -143,16 +146,17 @@ Foo函数第一句是getName = function(){ alert(1); };这是一个赋值语句�
 简单来讲，this的指向是由所在函数的调用方式决定的，而此处直接调用，this指向window对象。
 所以Foo函数返回的是window对象，相当于执行window.getName()，而window中的getName已经被修改为alert(1)，所以输出1。
 
-### 第四问
+#### 第四问
 ***
 直接调用getName函数，相当于window.getName()，因为这个变量已经被Foo函数执行修改了，结果同1。
 
 
-### 第五问
+#### 第五问
 ***
 new Foo.getName(); 此处考察的是js的运算符优先级。（.）的优先级高于new操作，所以相当于
 
 	new (Foo.getName)();
+	
 
 所以实际上讲getName作为构造函数来执行，弹出2。
 
@@ -167,6 +171,7 @@ js运算符优先级
  new Foo().getName() ，首先看运算符优先级括号高于new，实际执行为
 
 	(new Foo()).getName()
+	
 
 遂先执行Foo函数，而Foo此时作为构造函数却有返回值，所以这里需要说明下js中的构造函数返回值问题
 
@@ -175,13 +180,16 @@ js运算符优先级
 传统语言中，构造函数不应该有返回值，实际执行的返回值就是当前构造函数的实例化对象。
 而在js中构造函数可以有返回值也可以没有
 
-1、没有返回值则按照其他语言一样返回实例化对象
+1、没有返回值则按照其他语言一样返回实例化对象。
+
 ![alt constructor1](/assets/images/javaScript/constructor1.png "实例化对象")
 
 2、如有返回值则检查其是否为引用类型，如果不为引用类型，如基本类型（string，number，boolean，null，undefined）则与无返回值相同，实际返回其实例化对象。
+
 ![alt constructor2](/assets/images/javaScript/constructor2.png)
 
 3、若返回值是引用类型，则实际返回值为这个引用类型。
+
 ![alt constructor3](/assets/images/javaScript/constructor3.png)
 
 原题new Foo()返回的是this，而this在构造函数中本来就代表当前实例化对象，所以Foo函数返回实例化对象。
