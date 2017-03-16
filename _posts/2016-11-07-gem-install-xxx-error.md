@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "gem install XXX error"
-category: "other"
+category: "Other"
 date: 2016-11-07
 ---
 
@@ -23,7 +23,7 @@ date: 2016-11-07
 
 
 第一步是没有问题的
->![alt gem-remove](/assets/images/gemError/gem-remove.png "gem-remove")
+![alt gem-remove](/assets/images/gemError/gem-remove.png "gem-remove")
 
 
 #### 2.添加新的RubyGem镜像
