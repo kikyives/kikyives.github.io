@@ -57,14 +57,14 @@ date: 2017-03-16
 
 解析：
 
-####第一问
+#### 第一问
 *****
 此题首先定义了一个叫Foo的函数，然后在内部创建了一个全局getName变量，并把一个匿名函数赋给当前变量，并返回一个this指针。之后为Foo创建了一个叫getName的静态属性存储了一个匿名函数，然后为Foo的原型对象创建了一个叫getName的匿名函数。之后通过函数变量表达式创建了一个叫getName的函数，最后申明一个getName函数。
 
 第一问Foo.getName访问的自然是Foo函数的存储的静态属性，所以是2。
 
 
-####第二问
+#### 第二问
 *****
 直接调用getName函数，所以跟1,2,3都没关系。那么来看，
 
@@ -83,8 +83,10 @@ getName = function () { alert(4); };
 这里考察另个概念，一是变量声明提升，二是函数表达式。
 
 
-###变量声明提升
-*****
+### 变量声明提升
+
+***
+
 也就是说所有声明变量或函数都会提升到当前函数顶部。
 
 例如下面代码：
@@ -98,8 +100,8 @@ getName = function () { alert(4); };
 	console.log('x' in window) //true
 	x = 0;
 
-###函数表达式
-*****
+### 函数表达式
+***
 var getName 与 function getName 都是声明语句，区别在于前者是函数表达式，后者是函数声明。
 函数表达式会将代码段拆分两行代码分别执行。
 
@@ -133,21 +135,21 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 	getName(); //最终输出4
 
 
-###第三问
-*****
+### 第三问
+***
 Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。
 Foo函数第一句是getName = function(){ alert(1); };这是一个赋值语句，没有做var声明，所以先向当前函数作用域内寻找getName变量，没有找到就向当前函数作用域上层寻找，找到了，也就是第二问的alert(4)函数，然后给它赋值为function(){alert(1)}。
 此处实际上是讲外层作用域的getName函数修改了，其实说白了就是Foo函数下的getName是一个全局变量，此处返回一个this指针，指向window。
 简单来讲，this的指向是由所在函数的调用方式决定的，而此处直接调用，this指向window对象。
 所以Foo函数返回的是window对象，相当于执行window.getName()，而window中的getName已经被修改为alert(1)，所以输出1。
 
-###第四问
-*****
+### 第四问
+***
 直接调用getName函数，相当于window.getName()，因为这个变量已经被Foo函数执行修改了，结果同1。
 
 
-###第五问
-*****
+### 第五问
+***
 new Foo.getName(); 此处考察的是js的运算符优先级。（.）的优先级高于new操作，所以相当于
 
 	new (Foo.getName)();
@@ -160,16 +162,16 @@ js运算符优先级
 参考链接：[https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
 
-####第六问
-*****
+#### 第六问
+***
  new Foo().getName() ，首先看运算符优先级括号高于new，实际执行为
 
 	(new Foo()).getName()
 
 遂先执行Foo函数，而Foo此时作为构造函数却有返回值，所以这里需要说明下js中的构造函数返回值问题
 
-###构造函数的返回值
-*****
+### 构造函数的返回值
+***
 传统语言中，构造函数不应该有返回值，实际执行的返回值就是当前构造函数的实例化对象。
 而在js中构造函数可以有返回值也可以没有
 
@@ -186,8 +188,8 @@ js运算符优先级
 之后调用实例化对象的getName函数，因为Foo构造函数没有为实例化对象添加任何属性，因此找到了当前对象的原型（pototype），存在getName，遂输出3。
 
 
-####第七问
-*****
+#### 第七问
+***
 new new Foo().getName();同样是运算符优先级问题。
 
 最终实际执行为：
@@ -198,8 +200,8 @@ new new Foo().getName();同样是运算符优先级问题。
 
 结果为3。
 
-####总结
-*****
+#### 总结
+***
 此题涉及的知识点众多，包括变量定义提升、this指针指向、运算符优先级、原型、继承、全局变量污染、对象属性及原型属性优先级等等。所以基础很重要，提醒自己多看看书，别总是以为自己记不住，容易忘得东西才要多去看啊。给自己~
 
 
