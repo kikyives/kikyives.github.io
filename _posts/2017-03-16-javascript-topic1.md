@@ -105,7 +105,7 @@ date: 2017-03-16
 	console.log('x' in window) //true
 	x = 0;
 	
-	
+
 这里说明下这两个概念：
 
 ### 函数表达式
@@ -150,11 +150,15 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 >
 #### 第三问
 ***
-Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。
-Foo函数第一句是getName = function(){ alert(1); };这是一个赋值语句，没有做var声明，所以先向当前函数作用域内寻找getName变量，没有找到就向当前函数作用域上层寻找，找到了，也就是第二问的alert(4)函数，然后给它赋值为function(){alert(1)}。
-此处实际上是讲外层作用域的getName函数修改了，其实说白了就是Foo函数下的getName是一个全局变量，此处返回一个this指针，指向window。
-简单来讲，this的指向是由所在函数的调用方式决定的，而此处直接调用，this指向window对象。
-所以Foo函数返回的是window对象，相当于执行window.getName()，而window中的getName已经被修改为alert(1)，所以输出1。
+>Foo().getName(); 先执行了Foo函数，然后调用Foo函数的返回值对象的getName属性函数。
+
+>Foo函数第一句是getName = function(){ alert(1); };这是一个赋值语句，没有做var声明，所以先向当前函数作用域内寻找getName变量，没有找到就向当前函数作用域上层寻找，找到了，也就是第二问的alert(4)函数，然后给它赋值为function(){alert(1)}。
+
+>此处实际上是讲外层作用域的getName函数修改了，其实说白了就是Foo函数下的getName是一个全局变量，此处返回一个this指针，指向window。
+
+>简单来讲，this的指向是由所在函数的调用方式决定的，而此处直接调用，this指向window对象。
+
+>所以Foo函数返回的是window对象，相当于执行window.getName()，而window中的getName已经被修改为alert(1)，所以输出1。
 
 #### 第四问
 ***
