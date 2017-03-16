@@ -115,7 +115,8 @@ var getName 与 function getName 都是声明语句，区别在于前者是函�
 	x = 1;
 
 所以最终的函数声明x覆盖了变量声明的x。
-同理,源代码最终执行的是：
+同理，源代码最终执行的是：
+	
 	function Foo(){
 
 		getName = function () { alert(1); };
