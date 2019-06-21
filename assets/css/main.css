@@ -115,7 +115,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   text-transform: capitalize;
   cursor: pointer;
 }
@@ -207,7 +207,7 @@ body {
 }
 .post-header .post-title {
   margin-top: 15px;
-  font-size: 36px;
+  font-size: 20px;
   line-height: 1.5;
   text-transform: capitalize;
 }
